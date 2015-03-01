@@ -814,6 +814,9 @@ def mount(auth_storage_filepath, mountpoint, debug=None, nothreads=None,
                           in option_string.split(',') ]:
             k = opt_parts[0]
 
+            if k == "_netdev":
+                continue
+
             # We need to present a bool type for on/off flags. Since all we
             # have are strings, we'll convert anything with a 'True' or 'False'
             # to a bool, or anything with just a key to True.
