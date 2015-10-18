@@ -40,7 +40,7 @@ def main():
         auth_storage_filepath=args.auth_storage_file, 
         mountpoint=args.mountpoint, 
         debug=gdrivefs.config.IS_DEBUG, 
-        nothreads=gdrivefs.config.IS_DEBUG, 
+        nothreads=gdrivefs.config.NO_THREADS,
         option_string=option_string)
 
 if __name__ == '__main__':

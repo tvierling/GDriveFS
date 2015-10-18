@@ -235,6 +235,20 @@ Just set the `GD_DEBUG` environment variable to "1"::
        flags=0x00000011
 
 
+Multi-threading FUSE
+====================
+
+It used to be that GDFS mounting used FUSE with no threads, only when running in
+debugging-mode, and actually if not in debugging-mode, FUSE was always used
+with threads.
+
+Currently, using FUSE with threads corrupts data reads, once mounted.  Then now
+multi-threading is decoupled from debugging-mode, and by default set to no threads.
+
+To enable threads back when mounting GDFS, just set the `GD_NOTHREADS` environment
+variable to "0" (1 by default).
+
+
 Troubleshooting Steps
 =====================
 
