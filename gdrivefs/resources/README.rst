@@ -42,7 +42,7 @@ old version of their libraries, prior to when they fixed some Unicode problems
 that might cause failure when dealing with downloads/uploads of certain types
 of files.
 
-To install using *Mercurial*, do the following::
+To install using *Git*, do the following::
 
     $ git clone https://github.com/google/google-api-python-client
 
