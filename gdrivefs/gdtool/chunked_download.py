@@ -2,6 +2,11 @@ import logging
 import time
 import random
 
+try:
+    from oauth2client import util
+except ImportError:
+    from oauth2client import _helpers as util
+
 import oauth2client
 import apiclient.http
 import apiclient.errors
@@ -19,7 +24,7 @@ class ChunkedDownload(object):
     that needs to be downloaded (not a request object, which doesn't apply here).
     """
 
-    @oauth2client.util.positional(4)
+    @util.positional(4)
     def __init__(self, fd, http, uri, chunksize=DEFAULT_CHUNK_SIZE, start_at=0):
         """Constructor.
 
@@ -43,7 +48,7 @@ class ChunkedDownload(object):
         self._sleep = time.sleep
         self._rand = random.random
 
-    @oauth2client.util.positional(1)
+    @util.positional(1)
     def next_chunk(self, num_retries=0):
         """Get the next chunk of the download.
 
